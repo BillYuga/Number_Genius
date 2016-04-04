@@ -161,36 +161,7 @@ def reset():
     print ("+----------------------------+")
     print ("|    Reset successful!!!     |")
     print ("+----------------------------+")
-
-usernames=['ramish','Fosam']
-def user():
-	print 'PLEASE ENTER YOUR USER NAME \n'	
-	name=raw_input()
-        if name not in usernames :
-
-            print 'Your name is not currently in our database would you like to signup '
-          
-            if  raw_input()  not in ('yes','yep','yeah','sure'):
-               print 'You will view this product without a username'    
-            else:
-	       print 'enter your new user name'
-               usernames.append(raw_input())
-               print ' now you can sign in with this username \n Thank you for registering'
-               user()
-
-
-
-
-        else:
-            print ' \n \t HI \r ',name
-
-            return 0  
         
-
-
-
-
-
 print ("+*******NUMBER GENIUS********+")
 print ("+****************************+")
 win_points = 0
