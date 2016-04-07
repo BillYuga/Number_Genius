@@ -167,7 +167,6 @@ print ("+****************************+")
 win_points = 0
 games_won = 0
 games_played = 0
-user()
 play_game()
 
 
