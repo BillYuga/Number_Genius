@@ -1,6 +1,12 @@
 #Guess the number game.
 
 import random
+"""
+This game allows the user to guess a randomly picked number stored in
+the computer's memory. If the user guesses the number on the first try
+they get 3 points, 2 on the second guess and 1 on the third. The game ends
+if the user fails to guess the number after 3 try outs.
+"""
 
 #menu function
 def menu():
@@ -14,12 +20,12 @@ def menu():
     print ("| 5: About game              |")
     print ("| 6: Exit                    |")
     print ("+----------------------------+")
-    choice = raw_input("Enter your choice:")
+    choice = input("Enter your choice:")
     print ("+----------------------------+")
 
     while choice not in ('1','2','3', '4', '5', '6'):
         print ("Invalid choice!")
-        choice = raw_input("Enter choice again:")
+        choice = input("Enter choice again:")
     return choice
 
 #Level_choice function
@@ -31,7 +37,7 @@ def level_choice():
     print ("|\t2: Normal (1-15)     |")
     print ("|\t3: Hard (1-25)       |")
     print ("+----------------------------+")
-    level = raw_input("Enter level:")
+    level = input("Enter level:")
     while level not in ('1','2','3'):
         print ("Level does not exist!")
         level = input("Enter another level:")
@@ -43,7 +49,7 @@ def check_guess():
     while not guess.isdigit():
         print ("Value must be  a number!")
         print ("+----------------------------+")
-        guess = raw_input("What is your guess:")
+        guess = input("What is your guess:")
     while lives >= 0 and win == False:
            
         if int(guess) == rand_num:
@@ -71,14 +77,14 @@ def check_guess():
             lives -= 1
             print ("Lives left:", lives + 1)
             print ("+----------------------------+")
-            guess = raw_input("guess again:")
+            guess = input("guess again:")
         elif int(guess) < rand_num:
             print ("+----------------------------+")
             print ("Too low")
             lives -= 1
             print ("Lives left:", lives + 1)
             print ("+----------------------------+")
-            guess = raw_input("guess again:")
+            guess = input("guess again:")
         
             
 #main game play function
@@ -92,17 +98,17 @@ def play_game():
         level_ = level_choice()
         if level_ == '1':
             rand_num = random.randint(1,10)
-            guess = raw_input("What is your guess")
+            guess = input("What is your guess")
             check_guess()
         elif level_ == '2':
             rand_num = random.randint(1,15)
             print ("What is your guess")
-            guess = raw_input()
+            guess = input()
             check_guess()
         else:
             rand_num = random.randint(1,25)
             print ("What is your guess")
-            guess = raw_input()
+            guess = input()
             check_guess()
     elif menu_choice == '2':
         print ("+----------------------------+")
@@ -168,10 +174,4 @@ win_points = 0
 games_won = 0
 games_played = 0
 play_game()
-
-
-
-    
-
-
 
